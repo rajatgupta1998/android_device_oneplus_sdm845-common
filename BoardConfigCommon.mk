@@ -95,12 +95,12 @@ TARGET_USES_HWC2 := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# Lineage Hardware
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
-
 # NFC
 TARGET_USES_NQ_NFC := true
+
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += \
+    $(COMMON_PATH)/lineagehw
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
