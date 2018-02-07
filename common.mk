@@ -104,6 +104,10 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     libp61-jcop-kit \
     Tag
+    
+# Offmode charging
+PRODUCT_PACKAGES += \
+    chargeonlymode
 
 # Power
 PRODUCT_PACKAGES += \
