@@ -99,8 +99,8 @@ TARGET_ENABLE_MEDIADRM_64 := true
 TARGET_USES_NQ_NFC := true
 
 # Lineage Hardware
-BOARD_HARDWARE_CLASS += \
-    $(COMMON_PATH)/lineagehw
+JAVA_SOURCE_OVERLAYS := \
+    org.lineageos.hardware|$(COMMON_PATH)/lineagehw|**/*.java
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
