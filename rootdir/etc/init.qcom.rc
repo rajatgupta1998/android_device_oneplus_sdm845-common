@@ -55,6 +55,17 @@ on post-fs
     chown system system /sys/class/leds/vibrator/vmax_mv_call
     chown system system /sys/class/leds/vibrator/vmax_mv_strong
 
+
+    mkdir /data/vendor/omni 0770 cameraserver audio
+    write /data/vendor/omni/client_package_name 0
+    chown cameraserver audio /data/vendor/omni/client_package_name
+    chmod 0644 /data/vendor/omni/client_package_name
+
+    setprop vendor.camera.aux.packagelist "com.oneplus.camera"
+    setprop camera.hal1.packagelist "none"
+
+    mkdir /persist/battery 0770 system system
+
 on charger
     write /sys/class/backlight/panel0-backlight/brightness 150
 
