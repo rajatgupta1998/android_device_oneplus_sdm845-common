@@ -70,7 +70,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libvulkan
+    libvulkan \
+    DisplayMode
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
