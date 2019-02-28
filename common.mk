@@ -20,7 +20,7 @@ $(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-aosip
+    $(LOCAL_PATH)/overlay-candy
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
@@ -58,10 +58,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -70,12 +66,11 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    libvulkan \
-    DisplayMode
+    libvulkan
 
-# Doze
+# Device
 PRODUCT_PACKAGES += \
-    OnePlusDoze
+    DeviceParts
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -122,7 +117,6 @@ PRODUCT_BOOT_JARS += \
 
 # tri-state-key
 PRODUCT_PACKAGES += \
-    KeyHandler \
     tri-state-key_daemon
 
 # Update engine
