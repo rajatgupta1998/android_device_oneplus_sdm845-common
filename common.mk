@@ -69,8 +69,8 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 # Device
-PRODUCT_PACKAGES += \
-    DeviceParts
+#PRODUCT_PACKAGES += \
+#    DeviceParts
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -148,3 +148,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+# Inherit from oppo-common
+$(call inherit-product, device/oppo/common/common.mk)
