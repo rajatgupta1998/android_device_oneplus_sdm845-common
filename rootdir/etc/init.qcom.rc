@@ -7,20 +7,6 @@ on init
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules-aging/qca_cld3_wlan.ko bind
     mount none /system/lib/modules/wlan.ko /vendor/lib/modules/qca_cld3_wlan.ko bind
 
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/system-background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 0
-    # Set default schedTune value for foreground/top-app a init
-    write /dev/stune/foreground/schedtune.prefer_idle 1
-    write /dev/stune/top-app/schedtune.boost 10
-    write /dev/stune/top-app/schedtune.prefer_idle 1
-
-on fs
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 0
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 0
-
 on boot
     # Fingerprint
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
@@ -78,9 +64,3 @@ service dashd /sbin/dashd
 
 service factory-hal-1-0 /system/bin/true
     disabled
-
-on property:sys.post_boot.parsed=1
-    setprop vendor.post_boot.parsed 1
-
-on property:vendor.post_boot.parsed=1
-    exec u:r:magisk:s0 root root -- /init.kronic.sh

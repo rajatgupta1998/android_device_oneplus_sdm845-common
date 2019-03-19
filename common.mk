@@ -58,6 +58,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -67,10 +71,6 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
-
-# Device
-#PRODUCT_PACKAGES += \
-#    DeviceParts
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -114,24 +114,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Camera
-PRODUCT_PACKAGES_DEBUG += \
-    CameraPackage
-
-# Prebuilts
-PRODUCT_PACKAGES += \
-    OnePlusCamera \
-    OnePlusGallery \
-    OnePlusCameraService
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh  \
-    $(LOCAL_PATH)/prebuilts/etc/permissions/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml
-
-# tri-state-key
-PRODUCT_PACKAGES += \
-    tri-state-key_daemon
 
 # Update engine
 PRODUCT_PACKAGES += \
