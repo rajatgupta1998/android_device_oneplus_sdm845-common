@@ -1,40 +1,30 @@
 on init
-# Set default schedTune value for foreground/top-app a init
+	write /dev/stune/schedtune.colocate 0
+	write /dev/stune/background/schedtune.colocate 0
+	write /dev/stune/system-background/schedtune.colocate 0
+	write /dev/stune/foreground/schedtune.colocate 0
+	write /dev/stune/top-app/schedtune.colocate 0
+
+# Set default SchedTune value for foreground/top-app on init
 	write /dev/stune/foreground/schedtune.prefer_idle 1
 	write /dev/stune/top-app/schedtune.boost 10
 	write /dev/stune/top-app/schedtune.prefer_idle 1
 
-
-on post-fs-data
-# Tune Core_CTL for proper task placement
-	write /sys/devices/system/cpu/cpu0/core_ctl/enable 0
-	write /sys/devices/system/cpu/cpu4/core_ctl/enable 0
-
+on fs
+	write /dev/stune/foreground/schedtune.sched_boost_no_override 0
+	write /dev/stune/top-app/schedtune.sched_boost_no_override 0
 
 on property:sys.boot_completed=1
-# Disable sched_boost
-	write /proc/sys/kernel/sched_boost 0
-
-# Set default schedTune value for foreground/top-app
+# Set default SchedTune value for foreground/top-app
 	write /dev/stune/top-app/schedtune.boost 0
 
-# Stune configuration
-	write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
-	write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1500
-
-# Dynamic Stune Boost during sched_boost
+# Dynamic SchedTune Boost during sched_boost
 	write /dev/stune/top-app/schedtune.sched_boost 15
 
-
 on property:sys.post_boot.parsed=1
-    setprop vendor.post_boot.parsed 1
-
+	setprop vendor.post_boot.parsed 1
 
 on property:vendor.post_boot.parsed=1
-# Input boost 
-	write /sys/module/cpu_boost/parameters/input_boost_freq "0:1056000 1:0 2:0 3:0 4:1056000 5:0 6:0 7:0"
-	write /sys/module/cpu_boost/parameters/input_boost_ms 500
-
 # Disable CAF task placement for Big Cores
 	write /proc/sys/kernel/sched_walt_rotate_big_tasks 0
 
@@ -55,12 +45,9 @@ on property:vendor.post_boot.parsed=1
 
 # Setup EAS cpusets values for better load balancing
 	write /dev/cpuset/top-app/cpus 0-7
-	# Since we are not using core rotator, lets load balance
 	write /dev/cpuset/foreground/cpus 0-3,6-7
 	write /dev/cpuset/background/cpus 0-1
 	write /dev/cpuset/system-background/cpus 0-3
-
-# For better screen off idle
 	write /dev/cpuset/restricted/cpus 0-3
 
 # Adjust Read Ahead
