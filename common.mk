@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# tri-state-key
+PRODUCT_PACKAGES += \
+    tri-state-key_daemon
+
 # Update engine
 PRODUCT_PACKAGES += \
     brillo_update_payload \
