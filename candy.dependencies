@@ -2,7 +2,7 @@
   {
     "repository": "CandyDevices/neutrino_kernel_oneplus_sdm845",
     "target_path": "kernel/oneplus/sdm845"
-    "revision": "c9.0"
+    "revision": "c9.0-neutrino"
   },
   {
     "repository": "SecretIngredients/vendor_oneplus_sdm845-common",
