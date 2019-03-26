@@ -80,5 +80,5 @@
     <bool name="config_hasDashCharger">true</bool>
 
     <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>
+    <bool name="config_enableSmartPixels">false</bool>
 </resources>
