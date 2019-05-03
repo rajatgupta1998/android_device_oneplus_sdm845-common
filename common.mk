@@ -136,4 +136,4 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 # Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
+#$(call inherit-product, device/oppo/common/common.mk)
