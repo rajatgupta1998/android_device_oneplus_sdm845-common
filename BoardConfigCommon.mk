@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Inherit from oppo-common
--include device/oppo/common/BoardConfigCommon.mk
-
 BOARD_VENDOR := oneplus
 
 COMMON_PATH := device/oneplus/sdm845-common
