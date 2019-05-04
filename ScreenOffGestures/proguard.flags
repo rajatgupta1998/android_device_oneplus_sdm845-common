@@ -1,0 +1,5 @@
+-keep public class org.candy.device.ScreenOffGestures
+
+-keepclassmembers public class org.candy.device.ScreenOffGestures {
+    *;
+}
