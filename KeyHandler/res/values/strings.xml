@@ -21,7 +21,7 @@
 
     <!-- Button settings -->
     <string name="button_panel_title">Additional buttons</string>
-    
+
     <!-- Notification slider -->
     <string name="notification_slider_category_title">Notification slider</string>
     <string name="notification_slider_selection_dialog_title">Action</string>
@@ -34,7 +34,7 @@
     <string name="notification_slider_mode_silent">Silent</string>
     <string name="notification_slider_mode_vibrate">Vibrate</string>
     <string name="notification_slider_mode_none">Normal</string>
-    <string name="buttons_dashboard_summary">Alert Slider Settings</string>
+    <string name="notification_slider_summary">Alert Slider Settings</string>
 
     <string name="category_vibrator">Vibrator</string>
     <string name="vib_strength_title_head">System Strength</string>
