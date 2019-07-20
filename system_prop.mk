@@ -47,6 +47,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpm.feature=9
 
+# FOD props
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.sys.fp.fod.location.X_Y=444,1966 \
+    persist.vendor.sys.fp.fod.size.width_height=190,190
+
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
