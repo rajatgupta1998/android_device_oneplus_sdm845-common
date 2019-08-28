@@ -88,9 +88,6 @@ ifeq ($(HOST_OS),linux)
 endif
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
 
-# Display
-TARGET_USES_HWC2 := true
-
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
